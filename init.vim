@@ -143,6 +143,9 @@ function! StartNewParagraph(direction)
     execute 'normal! `k'
 endfunction
 
+nnoremap ' `
+nnoremap ` '
+
 nnoremap <leader>o mko<Esc>`k
 nnoremap <leader>O mkO<Esc>`k
 
