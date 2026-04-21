@@ -66,6 +66,8 @@ imap <PageDown> <Esc><C-d>zzi
 
 nmap Y y$
 
+vmap * "ky/<C-r>k
+
 nmap <leader>sv :source ~/.ideavimrc<CR>
 
 nmap <leader>mdc ^idata <Esc>$daBxa(
