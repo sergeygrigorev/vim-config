@@ -122,22 +122,16 @@ endfunction
 
 function! EnsureBlankLinesCount(count, direction)
     execute 'normal! mk'
-
-    echo 'start'
     let l:current_line = line('.')
-    echo l:current_line
     let l:next_non_empty_line = NextNonMatchingLineIdx(l:current_line, a:direction, '^\s*$')
-    echo l:current_line . ' / ' . l:next_non_empty_line
     let l:empty_lines_count = abs(l:current_line - l:next_non_empty_line) - 1
     let l:desired_count = a:count ? a:count : 1
     let l:delta = l:empty_lines_count - l:desired_count
-    echo l:current_line . ' / ' . l:next_non_empty_line . ' / ' . l:empty_lines_count . ' / ' . l:desired_count . ' / ' . l:delta
     if l:delta > 0
         execute 'normal! ' . DirMove(a:direction) . (l:delta == 1 ? 'dd' : ('d' . (l:delta - 1) . DirMove(a:direction)))
     elseif l:delta < 0
         execute 'normal! ' . (-l:delta) . DirAppend(a:direction)
     endif
-
     execute 'normal! `k'
 endfunction
 
@@ -159,7 +153,6 @@ function! StartNewParagraph(spacing, direction)
         call MoveBetweenLines(l:initial_line, l:min_non_blank_line + 1)
         execute 'normal! ' . l:difference . 'dd'
     endif
-    "echo 'initial = ' . l:initial_line . ', current = ' . line('.')
     call MoveBetweenLines(line('.'), l:min_non_blank_line + l:spacing + 1)
 endfunction
 
