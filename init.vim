@@ -26,7 +26,8 @@ set incsearch
 
 " Highlight search results
 set hlsearch
-nnoremap <silent> <Esc> :noh<CR>
+" Both remove highlights and carets
+nmap <silent> <Esc> :noh<CR><Action>(EditorEscape)
 
 " Use smart case insensitive searching. If the search pattern contains
 " mixed case, the search becomes case-sensitive; otherwise, it is case-insensitive.
@@ -148,8 +149,8 @@ endfunction
 nnoremap ' `
 nnoremap ` '
 
-nnoremap <leader>o mko<Esc>`k
-nnoremap <leader>O mkO<Esc>`k
+nnoremap <expr> <leader>o '<Esc>mk' . (v:count ? v:count : 1) . 'o<Esc>`k'
+nnoremap <expr> <leader>O '<Esc>mk' . (v:count ? v:count : 1) . 'O<Esc>`k'
 
 "nnoremap <expr> <leader>o '<Esc>:call EnsureBlankLinesCount(' . v:count . ', 1)<CR>'
 "nnoremap <expr> <leader>O '<Esc>:call EnsureBlankLinesCount(' . v:count . ', -1)<CR>'
