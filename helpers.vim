@@ -1,3 +1,11 @@
+function! MoveBetweenLines(from, to)
+    let l:steps = abs(a:from - a:to)
+    if l:steps != 0
+        let l:cmd = DirMove(a:to - a:from)
+        execute 'normal! ' . l:steps . l:cmd
+    endif
+endfunction
+
 function! DirMove(direction)
     return a:direction > 0 ? 'j' : 'k'
 endfunction

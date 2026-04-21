@@ -141,9 +141,26 @@ function! EnsureBlankLinesCount(count, direction)
     execute 'normal! `k'
 endfunction
 
-function! StartNewParagraph(direction)
-    execute 'normal! mk'
-    execute 'normal! `k'
+function! StartNewParagraph(spacing, direction)
+    let l:initial_line = line('.')
+    let l:spacing = a:spacing ? a:spacing : 1
+    let l:initial_line_is_blank = LineMatches(l:initial_line, '^\s*$')
+    let l:next_non_blank_line = NextNonMatchingLineIdx(l:initial_line, a:direction, '^\s*$')
+    let l:prev_non_blank_line = l:initial_line_is_blank ? NextNonMatchingLineIdx(l:initial_line, -a:direction, '^\s*$') : l:initial_line
+    let l:min_non_blank_line = min([l:prev_non_blank_line, l:next_non_blank_line])
+    let l:max_non_blank_line = max([l:prev_non_blank_line, l:next_non_blank_line])
+    let l:actual_blank_lines_count = l:max_non_blank_line - l:min_non_blank_line - 1
+    let l:desired_blank_lines_count = l:spacing * 2 + 1
+    let l:difference = abs(l:desired_blank_lines_count - l:actual_blank_lines_count)
+    if l:desired_blank_lines_count > l:actual_blank_lines_count
+        call MoveBetweenLines(l:initial_line, l:min_non_blank_line)
+        execute 'normal! ' . l:difference . 'o'
+    elseif l:desired_blank_lines_count < l:actual_blank_lines_count
+        call MoveBetweenLines(l:initial_line, l:min_non_blank_line + 1)
+        execute 'normal! ' . l:difference . 'dd'
+    endif
+    "echo 'initial = ' . l:initial_line . ', current = ' . line('.')
+    call MoveBetweenLines(line('.'), l:min_non_blank_line + l:spacing + 1)
 endfunction
 
 nnoremap ' `
@@ -151,6 +168,9 @@ nnoremap ` '
 
 nnoremap <expr> <leader>o '<Esc>mk' . (v:count ? v:count : 1) . 'o<Esc>`k'
 nnoremap <expr> <leader>O '<Esc>mk' . (v:count ? v:count : 1) . 'O<Esc>`k'
+
+nnoremap <expr> <leader>ipo '<Esc>:call StartNewParagraph(' . v:count . ', 1)<CR>A'
+nnoremap <expr> <leader>ipO '<Esc>:call StartNewParagraph(' . v:count . ', -1)<CR>A'
 
 "nnoremap <expr> <leader>o '<Esc>:call EnsureBlankLinesCount(' . v:count . ', 1)<CR>'
 "nnoremap <expr> <leader>O '<Esc>:call EnsureBlankLinesCount(' . v:count . ', -1)<CR>'
