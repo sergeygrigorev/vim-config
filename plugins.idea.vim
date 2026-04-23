@@ -31,10 +31,10 @@ set dial
 nmap <C-a> :DialIncrement<CR>
 nmap <C-x> :DialDecrement<CR>
 let g:dial_include = 'basic,numbers,dates,java,javascript,markdown,python'
-" This should work but doesn't
-" let g:dial_custom_definitions = [
-"     ['normalizedCaseWords', ['one', 'two', 'three']],
-"     ['words', ['un', 'deux', 'trois']],
-"     ['normalizedCasePattern', ['alpha', 'beta', 'gamma']],
-"     ['pattern', ['start', 'middle', 'end']]
-" ]
+let g:dial_custom_definitions = [
+    ['normalizedCaseWords', ['one', 'two', 'three']],
+    ['words', ['un', 'deux', 'trois']],
+    ['normalizedCasePattern', ['alpha', 'beta', 'gamma']],
+    ['pattern', ['start', 'middle', 'end']],
+]
+

@@ -1,6 +1,7 @@
 echo 'Loading mappings.vim'
 
-mapclear
+" Disabled because Plug '...' directives seem to not recreate mappings
+" mapclear
 
 let mapleader = " "
 nmap <S-Space> <leader>
