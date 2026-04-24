@@ -10,9 +10,10 @@ endfunction
 call LoadSource('helpers.vim')
 call LoadSource('functions.vim')
 
-call LoadSource('options.vim')
-call LoadSource('options.idea.vim')
-call LoadSource('mappings.vim')
-call LoadSource('mappings.idea.vim')
+call LoadSource('options/common.vim')
+call LoadSource('options/idea.vim')
 
-call LoadSource('plugins.idea.vim')
+call LoadSource('mapping/common.vim')
+call LoadSource('mapping/idea.vim')
+
+call LoadSource('plugins/idea.vim')

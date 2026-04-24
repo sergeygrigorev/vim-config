@@ -1,4 +1,4 @@
-echo 'Loading options.idea.vim'
+echo 'Loading options/idea.vim'
 
 set ideajoin
 set clipboard+=ideaput

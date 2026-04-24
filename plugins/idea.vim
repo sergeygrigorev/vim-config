@@ -1,4 +1,4 @@
-echo 'Loading plugins.idea.vim'
+echo 'Loading plugins/idea.vim'
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 

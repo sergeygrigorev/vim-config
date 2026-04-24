@@ -1,4 +1,4 @@
-echo 'Loading options.vim'
+echo 'Loading options/common.vim'
 
 " -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
