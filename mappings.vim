@@ -24,8 +24,6 @@ vnoremap * "ky/<C-r>k
 
 vnoremap <expr> <leader>p '"_d"' . v:register . 'P'
 vnoremap <leader>d \"_d
-vnoremap <leader>c \"*y
-nnoremap <leader>v \"*p
 
 nnoremap <expr> <leader>o '<Esc>mk' . (v:count ? v:count : 1) . 'o<Esc>`k'
 nnoremap <expr> <leader>O '<Esc>mk' . (v:count ? v:count : 1) . 'O<Esc>`k'

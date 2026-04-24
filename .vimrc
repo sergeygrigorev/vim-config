@@ -7,3 +7,4 @@ call LoadSource('functions.vim')
 
 call LoadSource('options.vim')
 call LoadSource('mappings.vim')
+call LoadSource('mappings.vanilla.vim')

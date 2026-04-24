@@ -16,5 +16,9 @@ nmap <silent> <Esc> :noh<CR><Action>(EditorEscape)
 
 nmap <leader>sv :source ~/.ideavimrc<CR>
 
+vmap <leader>c <Action>($Copy)<Esc>
+nmap <leader>v l<Action>($Paste)
+vmap <leader>v <Action>($Paste)
+
 nmap <leader>st <Action>(FileStructurePopup)
 nmap <leader>rf <Action>(RecentFiles)
