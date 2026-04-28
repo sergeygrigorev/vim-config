@@ -37,3 +37,4 @@ let g:dial_custom = [
     ['normalizedCasePattern', ['alpha', 'beta', 'gamma']],
     ['pattern', ['start', 'middle', 'end']],
 ]
+
