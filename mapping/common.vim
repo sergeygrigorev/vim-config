@@ -10,8 +10,8 @@ nnoremap <leader>q :wq<CR>
 
 nnoremap Y y$
 
-nnoremap ' `
-nnoremap ` '
+noremap ' `
+noremap ` '
 
 noremap <Home> 0^
 inoremap <Home> <Esc>0^i
