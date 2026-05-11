@@ -2,7 +2,7 @@
 
 if [[ ! -z "$WSL_DISTRO_NAME" ]]; then
     shell_type=wsl
-elif [[ ! -z "$MINGW_PREFIX" ]]; then
+elif [[ ! -z "$MSYSTEM" ]]; then
     shell_type=mingw
 else
     shell_type=bash
