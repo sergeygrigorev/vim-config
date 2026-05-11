@@ -1,8 +1,5 @@
 # How to use
 
-Add this to your `.vimrc`/`.ideavimrc` file:
+Execute `install.sh` script. It will figure out what type of shell is used and install the configuration accordingly.
 
-```vimscript
-let g:PATH_TO_CONFIG = 'c:/path/to/this/repo/' " should end with slash
-exec 'source ' . g:PATH_TO_CONFIG . '.vimrc' " or .ideavimrc
-```
+It will also install configuration that can be copied to servers into `~/server-config/` directory if it exists.

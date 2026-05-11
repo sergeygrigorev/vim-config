@@ -1,5 +1,3 @@
-echo 'Loading mapping/common.vim'
-
 " Disabled because Plug '...' directives seem to not recreate mappings
 " mapclear
 

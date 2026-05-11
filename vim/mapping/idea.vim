@@ -1,5 +1,3 @@
-echo 'Loading mapping/idea.vim'
-
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)

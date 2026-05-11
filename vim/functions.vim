@@ -1,5 +1,3 @@
-echo 'Loading functions.vim'
-
 function! ExecuteIfBlanks2(count, direction)
     let l:initial_pos = line('.')
     let l:initial_col = col('.')
