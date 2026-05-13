@@ -32,10 +32,8 @@ sections=(
 echo 'Installing bash configs...'
 echo "  machine type: $machine_type"
 echo "  shell type: $shell_type"
-echo "  target: $target_file"
-echo "  sections: [${sections[*]}]"
 
 SCRIPT_DIR=$(dirname "$0")
-"$SCRIPT_DIR/../tools/merge_sections.sh" "$SCRIPT_DIR" bashrc '#' "${sections[@]}" > "$target_file"
+"$SCRIPT_DIR/../tools/merge_sections.sh" "$SCRIPT_DIR" bashrc '#' "$target_file" "${sections[@]}"
 
 echo

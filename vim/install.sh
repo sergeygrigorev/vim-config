@@ -33,10 +33,8 @@ sections=(
 
 echo 'Installing vim configs...'
 echo "  flavor: $flavor"
-echo "  target: $target_file"
-echo "  sections: [${sections[*]}]"
 
 SCRIPT_DIR=$(dirname "$0")
-"$SCRIPT_DIR/../tools/merge_sections.sh" "$SCRIPT_DIR" vim '"' "${sections[@]}" > "$target_file"
+"$SCRIPT_DIR/../tools/merge_sections.sh" "$SCRIPT_DIR" vim '"' "$target_file" "${sections[@]}"
 
 echo
