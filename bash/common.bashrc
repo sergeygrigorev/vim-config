@@ -2,6 +2,7 @@ alias sudo='sudo '
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias ip='ip --color=auto'
 
 alias l='ls -lh'
 alias ll='ls -lha'
