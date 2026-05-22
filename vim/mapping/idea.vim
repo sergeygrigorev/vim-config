@@ -20,3 +20,7 @@ vmap <leader>v <Action>($Paste)
 
 nmap <leader>st <Action>(FileStructurePopup)
 nmap <leader>rf <Action>(RecentFiles)
+
+nmap <leader>tp <Action>(PinActiveEditorTab)
+nmap <leader>tcp <Action>(CloseAllUnpinnedEditors)
+nmap <leader>tco <Action>(CloseAllEditorsButActive)
