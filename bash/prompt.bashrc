@@ -55,7 +55,7 @@ generate_prompt() {
         local user=$(clr 92 \\u)
     fi
     local host=$(clr "$PS1_HOST_COLOR" \\h)
-    local shell=$(clr "$PS1_HOST_COLOR" "$PS1_TERMINAL")
+    local shell=$(clr "$PS1_TERMINAL_COLOR" "$PS1_TERMINAL")
     local path=$(clr 93 \\w)
     local git_status=$(clr 96 "$(generate_git_status ' (%s)')")
     local date_time=$(date +'%a %d %b %H:%M:%S %Z %z')
