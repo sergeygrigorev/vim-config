@@ -15,11 +15,5 @@ noh
 set ignorecase
 set smartcase
 
-" Related to tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-
 " Relative line numbers
 set rnu
