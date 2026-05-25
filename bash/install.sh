@@ -18,6 +18,7 @@ if [[ -z "$target_file" ]]; then
 fi
 
 sections=(
+    dotfiles.local
     common
     "$machine_type"
     "$shell_type"
@@ -33,7 +34,13 @@ echo 'Installing bash configs...'
 echo "  machine type: $machine_type"
 echo "  shell type: $shell_type"
 
-SCRIPT_DIR=$(dirname "$0")
-"$SCRIPT_DIR/../tools/merge_sections.sh" "$SCRIPT_DIR" bashrc '#' "$target_file" "${sections[@]}"
+bash_dir=$(dirname "$0")
+dotfiles_dir=$(realpath "$(dirname "$bash_dir")")
+
+cat << EOF > "$bash_dir/dotfiles.local.bashrc"
+DOTFILES_DIR='$dotfiles_dir'
+EOF
+
+"$dotfiles_dir/tools/merge_sections.sh" "$bash_dir" bashrc '#' "$target_file" "${sections[@]}"
 
 echo
