@@ -17,4 +17,4 @@ alias gpl='git pull'
 alias gl='git log'
 alias glo='git log --oneline'
 
-alias df-install="$dotfiles_dir/install.sh && source ~/.bashrc && source ~/user.bashrc"
+alias df-install="$DOTFILES_DIR/install.sh && source ~/.bashrc && source ~/user.bashrc"

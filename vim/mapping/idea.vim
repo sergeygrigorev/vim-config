@@ -25,5 +25,6 @@ nmap <leader>tp <Action>(PinActiveEditorTab)
 nmap <leader>tcp <Action>(CloseAllUnpinnedEditors)
 nmap <leader>tco <Action>(CloseAllEditorsButActive)
 nmap <leader>tca <Action>(CloseAllEditors)
+nmap <leader>tct :x<CR>
 
 nmap <leader>agb <Action>(Annotate)
