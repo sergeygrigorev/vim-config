@@ -17,5 +17,6 @@ alias gpsa='git remote | xargs -I{} git push {}'
 alias gpl='git pull'
 alias gl='git log'
 alias glo='git log --oneline'
+alias glp="git log '--pretty=tformat:%C(yellow)%h %Cblue%an %ah %Cgreen%cn %ch %Cred%d%n%s'"
 
 alias df-install="$DOTFILES_DIR/install.sh && source ~/.bashrc && source ~/user.bashrc"
