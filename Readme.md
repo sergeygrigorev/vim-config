@@ -2,6 +2,8 @@
 
 Add `[[ -f ~/user.bashrc ]] && source ~/user.bashrc` to your `~/.bashrc` file.
 
+You may need to add `source ~/.bashrc` to your `~/.bash_profile` file.
+
 Execute `install.sh` script. It will figure out what type of shell is used and generate the configuration accordingly.
 
 Configuration will be installed to `~/user.bashrc` file.
